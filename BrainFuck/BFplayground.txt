@@ -1,0 +1,27 @@
+structure: (value 1)(value 2)(aux)(compare 1)(compare 2)
+
++++
+value 1 is in first position
+>
+++
+value 2 is in second position
+
+compare the two values :
+
+first copy value 2 to the compare :
+[
+  > move to aux
+  + increment aux
+  > move to compare 2
+  + increment compare 2
+  << move back to the value
+  - decrement the the value
+]
+restore the value 2 :
+> move to aux
+[
+  - decrement the aux
+  < move back to value 2
+  + increment value 2
+  >
+]
