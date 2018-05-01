@@ -1,9 +1,12 @@
+this program compares the first two values
+if the values are not equal then aux is cleared
+if the values are equal then the aux is set
 structure: (value 1)(value 2)(aux)(compare 1)(compare 2)
 
 +++
 value 1 is in first position
 >
-++
++++
 value 2 is in second position
 
 compare the two values :
@@ -12,9 +15,9 @@ first copy value 2 to the compare :
 [
   > move to aux
   + increment aux
-  > move to compare 2
+  >> move to compare 2
   + increment compare 2
-  << move back to the value
+  <<< move back to the value
   - decrement the the value
 ]
 restore the value 2 :
@@ -25,3 +28,45 @@ restore the value 2 :
   + increment value 2
   >
 ]
+
+<< move back to value 1
+[
+  >> move to aux
+  + increment aux
+  > move to compare 1
+  + increment compare 1
+  <<< move to value 1
+  - decrement value 1
+]
+
+restore the value 1 :
+>> move to aux
+[
+  - decrement the aux
+  << move back to value 1
+  + increment value 1
+  >>
+]
+
+> move to compare 1
+[
+  - decrement compare 1
+  > move to compare 2
+  - decrement compare 2
+  < move to compare 1
+]
+
+< move to aux
+[-] reset aux
++ make aux 1
+>> move to compare 2
+[
+  if the compare 2 is not 0 then the compared values differ
+  << move to aux
+  [-] reset aux
+]
+
+> move to compare 1
+[-] reset compare 1
+> move to compare 2
+[-] reset compare 2
