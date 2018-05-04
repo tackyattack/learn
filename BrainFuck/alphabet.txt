@@ -1,0 +1,23 @@
+to do alphabet from A to Z you need to go from 65 to 90
+which is 26
+
+5 times 5 is 25
+>
++++ ++ load in first value
+[< +++ ++ > -]
+<+>
+8 times 8 is 64
+>
+++++ ++++ load in first value
+[< ++++ ++++ > -]
+<+
+now we are at 65 in second position
+
+<
+[
+>
+. output the character
++ increment letter
+< move back to alphabet counter
+- decrement
+]
